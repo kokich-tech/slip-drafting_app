@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_one :address
 
   has_one :card, dependent: :destroy
-
+  has_many  :withdrawal
   has_many :items
   has_many :buyers
 end

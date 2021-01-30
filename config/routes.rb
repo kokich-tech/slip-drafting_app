@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'top#index'
+  root 'top#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     }
@@ -16,4 +16,8 @@ Rails.application.routes.draw do
     get 'users/sign_up/complete', to: 'users/registrations#complete'
   end
 
+  resources :withdrawals
+
+  resources :secondtop
+  
 end
