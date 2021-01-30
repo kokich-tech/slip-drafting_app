@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_064601) do
+ActiveRecord::Schema.define(version: 2021_01_29_091859) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "postal_code"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(version: 2021_01_24_064601) do
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "secondtops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -54,4 +59,25 @@ ActiveRecord::Schema.define(version: 2021_01_24_064601) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "withdrawals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "purpose_id", null: false
+    t.text "store_description", null: false
+    t.integer "price", null: false
+    t.integer "price_10000"
+    t.integer "price_5000"
+    t.integer "price_1000"
+    t.integer "price_500"
+    t.integer "price_100"
+    t.integer "price_50"
+    t.integer "price_5"
+    t.integer "price_10"
+    t.integer "price_1"
+    t.text "staff_name"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_withdrawals_on_user_id"
+  end
+
+  add_foreign_key "withdrawals", "users"
 end

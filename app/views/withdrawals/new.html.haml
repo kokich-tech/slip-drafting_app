@@ -1,0 +1,81 @@
+.head
+.main
+  .main__title
+    出金伝票
+  .box
+  = form_for @withdrawal do |f|
+    .box__title
+      %label 出金目的
+      %span.box__title--required 必須
+    = f.collection_select :purpose_id, Purpose.all, :id, :name,{prompt: "選択してください"}, {class: "box__input"}
+    %end
+    .box__margin
+    .box__title
+      %label 来店予定店舗
+      %span.box__title--required 必須
+    = f.text_area :store_description, class: "box__input",  placeholder: "例）みかん支店"
+    .box__margin
+    .box__title 
+      %label 出金金額 
+      %span.box__title--required 必須
+    ※1,000万円以上の高額出金は来店店舗に事前連絡をお願いいたします。(¥1~9999999) 
+    %br
+    ￥
+    = f.number_field :price, class: "box__input--input-price", placeholder: "０", min: 1, max: 9999999
+    .box__margin
+    .box__title
+      %label 金種指定
+      %span.box__title--required 任意
+    1万円：
+    = f.number_field :price_10000, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999
+    枚
+    .box__margin
+    %br
+    ５千円：
+    = f.number_field :price_5000, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    １千円：
+    = f.number_field :price_1000, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    ５００円：
+    = f.number_field :price_500, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    １００円：
+    = f.number_field :price_100, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    ５０円：
+    = f.number_field :price_50, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    １０円：
+    = f.number_field :price_10, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    ５円：
+    = f.number_field :price_5, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+    %br
+    １円：
+    = f.number_field :price_1, class: "box__input--input-price", placeholder: "０", min: 1, max: 999999  
+    枚
+    .box__margin
+   
+    .box__margin
+    .box__title
+      %label 営業担当者
+      %span.box__title--required 任意
+    = f.text_area :staff_name, class: "box__input",  placeholder: "例）山田太郎"
+    .box__margin
+    = f.submit "送信する", class: "box__btn-wrapper__submit-btn"
+.bottom

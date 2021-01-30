@@ -1,0 +1,2 @@
+class Secondtop < ApplicationRecord
+end

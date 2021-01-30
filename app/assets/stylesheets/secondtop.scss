@@ -10,8 +10,7 @@
   justify-content: space-between;
   display: flex;
   &__sign-up{
-    align-items: flex-end;
-    margin: 90px ;
+    margin: 90px 40px 40px 20px ;
     width: 280px;
     height: 280px;
     text-align: center;
@@ -20,9 +19,9 @@
     a{
       text-decoration: none;
     }
-    background-color: teal;
-    border-radius :8px;
-    box-shadow :0px 0px 5px silver;
+  background-color:teal;
+  border-radius :8px;
+  box-shadow :0px 0px 5px silver;
   }
 }
 
@@ -30,4 +29,9 @@
   width: auto;
   height: 128px;
   background-color: #272727;
+  
+  &__btn{
+    background-color: gray;
+    text-align: center;
+  }
 }
