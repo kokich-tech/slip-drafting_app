@@ -1,0 +1,2 @@
+class ReSlip < ApplicationRecord
+end

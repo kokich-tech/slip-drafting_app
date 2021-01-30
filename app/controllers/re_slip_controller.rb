@@ -1,0 +1,2 @@
+class ReSlipController < ApplicationController
+end
