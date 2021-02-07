@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_091859) do
+ActiveRecord::Schema.define(version: 2021_01_30_070147) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "postal_code"
@@ -26,9 +26,13 @@ ActiveRecord::Schema.define(version: 2021_01_29_091859) do
     t.integer "user_id"
   end
 
-  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "re_slips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "withdrawal_id"
+    t.index ["user_id"], name: "index_re_slips_on_user_id"
+    t.index ["withdrawal_id"], name: "index_re_slips_on_withdrawal_id"
   end
 
   create_table "secondtops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -42,17 +46,17 @@ ActiveRecord::Schema.define(version: 2021_01_29_091859) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "email", limit: 191, default: "", null: false
-    t.string "encrypted_password", limit: 191, default: "", null: false
-    t.string "nickname", limit: 191, null: false
-    t.string "familyname", limit: 191, null: false
-    t.string "firstname", limit: 191, null: false
-    t.string "familyname_kana", limit: 191, null: false
-    t.string "firstname_kana", limit: 191, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "nickname", null: false
+    t.string "familyname", null: false
+    t.string "firstname", null: false
+    t.string "familyname_kana", null: false
+    t.string "firstname_kana", null: false
     t.date "bairthday", null: false
-    t.string "reset_password_token", limit: 191
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at", precision: 6
+    t.datetime "remember_created_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -79,5 +83,7 @@ ActiveRecord::Schema.define(version: 2021_01_29_091859) do
     t.index ["user_id"], name: "index_withdrawals_on_user_id"
   end
 
+  add_foreign_key "re_slips", "users"
+  add_foreign_key "re_slips", "withdrawals"
   add_foreign_key "withdrawals", "users"
 end

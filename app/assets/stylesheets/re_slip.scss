@@ -1,3 +1,30 @@
-// Place all the styles related to the re-slip controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.head{
+  width: auto;
+  height: 128px;
+  background-color:#272727 ;
+}
+.middle{
+  margin: 0 150px;
+  
+  &__title{
+    font-weight: bold;
+    text-align: center;
+    width: auto;
+    margin: 0 auto 20px auto;
+    padding-top: 20px;
+    &__box{
+      width: 700px;
+      margin-bottom: 25px;
+      &__content{
+        
+      }
+    }
+  }
+  
+}
+
+.bottom{
+  width: auto;
+  height: 128px;
+  background-color: #272727;
+}

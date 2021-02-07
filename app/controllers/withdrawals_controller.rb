@@ -1,12 +1,18 @@
 class WithdrawalsController < ApplicationController
-  before_action :redirect_to_log_in, only: [:new, :create]
+  before_action :redirect_to_log_in, only: [:new, :create,:show]
+  
   def new
     @withdrawal  = Withdrawal.new
   end
   
   def index
+    # @withdrawal = Withdrawal.find(current_user.id)
+    @withdrawal = Withdrawal.all
   end
+
   def show
+    @withdrawal  = Withdrawal.all
+    @withdrawal = Withdrawal.find(params[:id])
   end
   def create
     @withdrawal  = Withdrawal.new(money_params)
@@ -29,4 +35,5 @@ class WithdrawalsController < ApplicationController
   def money_params
     params.require(:withdrawal).permit(:purpose_id,:store_description,:price).merge(user_id: current_user.id)
   end
+
 end

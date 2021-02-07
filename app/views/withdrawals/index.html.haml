@@ -1,0 +1,56 @@
+予約出金伝票一覧（最大表示件数2件）
+.body
+  
+  =@withdrawal.each do |withdrawal|
+    %table{:border=>'1'} 
+      %thead
+        %tr
+          %th 伝票番号
+          %td=withdrawal.id
+        %tr
+          %th 出金目的
+          %td=withdrawal.purpose.name
+        %tr
+          %th 来店支店
+          %td=withdrawal.store_description
+        %tr
+          %th 出金金額（円）
+          %td=withdrawal.price
+        %tr
+          %th 金種指定(10000円)
+          %td=withdrawal.price_10000
+        %tr
+          %th 金種指定(5000円)
+          %td=withdrawal.price_5000
+        %tr
+          %th 金種指定(1000円)
+          %td=withdrawal.price_1000
+        %tr
+          %th 金種指定(500円)
+          %td=withdrawal.price_500
+        %tr
+          %th 金種指定(100円)
+          %td=withdrawal.price_100
+        %tr
+          %th 金種指定(50円)
+          %td=withdrawal.price_50
+        %tr
+          %th 金種指定(10円)
+          %td=withdrawal.price_10
+        %tr
+          %th 金種指定(5円)
+          %td=withdrawal.price_5
+        %tr
+          %th 金種指定(1円)
+          %td=withdrawal.price_1
+        %tr
+          %th 営業担当
+          %td=withdrawal.staff_name
+        %tr
+          %th 登録日時
+          %td=withdrawal.created_at
+
+
+
+
+
