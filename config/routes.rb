@@ -20,6 +20,6 @@ Rails.application.routes.draw do
 
   resources :secondtop
 
-  
+  resources :re_slip
   
 end

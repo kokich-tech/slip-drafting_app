@@ -49,9 +49,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
         t.text :city
         t.text :house_number
         t.text :building
-        t.integer :telephone
         t.timestamps
-        t.integer :user_id
       end
     end
 
