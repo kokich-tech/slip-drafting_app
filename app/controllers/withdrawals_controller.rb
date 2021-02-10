@@ -33,7 +33,7 @@ class WithdrawalsController < ApplicationController
   end
 
   def money_params
-    params.require(:withdrawal).permit(:purpose_id,:store_description,:price).merge(user_id: current_user.id)
+    params.require(:withdrawal).permit(:purpose_id,:store_description,:price,:price_10000,:price_5000,:price_1000,:price_500,:price_100,:price_50,:price_10,:price_5,:price_1,:staff_name).merge(user_id: current_user.id)
   end
 
 end

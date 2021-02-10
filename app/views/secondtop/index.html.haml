@@ -6,14 +6,11 @@
     = link_to image_tag('128272.png', size:"220x200"),new_withdrawal_path
   .middle__sign-up
     入金
-    = link_to image_tag('131643.png', size:"220x200"),"#"
-  .middle__sign-up
-    両替
-    = link_to image_tag('44004.png', size:"220x200"),"#"
+    = link_to image_tag('131643.png', size:"220x200"),new_payment_path
   .middle__sign-up
     予約伝票確認
     = link_to image_tag('155821.png', size:"220x200"),re_slip_index_path
 
 .bottom
   .bottom__btn
-    =button_to 'トップへ戻る', root_path
+    =link_to 'トップへ戻る', root_path  ,class:  'topbotton'
