@@ -1,7 +1,7 @@
 予約出金伝票一覧（最大表示件数2件）
 .body
   
-  =@withdrawal.each do |withdrawal|
+  - @withdrawal.each do |withdrawal|
     %table{:border=>'1'} 
       %thead
         %tr

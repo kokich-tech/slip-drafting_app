@@ -1,0 +1,27 @@
+予約入金伝票一覧（最大表示件数2件）
+.body
+  
+  - @payment.each do |payment|
+    %table{:border=>'1'} 
+      %thead
+        %tr
+          %th 伝票番号
+          %td=payment.id
+        %tr
+          %th 入金目的
+          %td=payment.purposepay.name
+        %tr
+          %th 来店支店
+          %td=payment.store_description
+        %tr
+          %th 入金種目
+          %td=payment.type.name
+        %tr
+          %th 入金金額（円）
+          %td=payment.price
+        %tr
+          %th 営業担当
+          %td=payment.staff_name
+        %tr
+          %th 登録日時
+          %td=payment.created_at

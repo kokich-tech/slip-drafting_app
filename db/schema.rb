@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_30_070147) do
+ActiveRecord::Schema.define(version: 2021_02_07_111603) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "postal_code"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2021_01_30_070147) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+  end
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "purposepay_id", null: false
+    t.text "store_description", null: false
+    t.integer "type_id", null: false
+    t.integer "price", null: false
+    t.text "staff_name"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "re_slips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -83,6 +95,7 @@ ActiveRecord::Schema.define(version: 2021_01_30_070147) do
     t.index ["user_id"], name: "index_withdrawals_on_user_id"
   end
 
+  add_foreign_key "payments", "users"
   add_foreign_key "re_slips", "users"
   add_foreign_key "re_slips", "withdrawals"
   add_foreign_key "withdrawals", "users"

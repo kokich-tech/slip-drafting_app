@@ -1,0 +1,36 @@
+.head
+.main
+  .main__title
+    入金伝票
+  .box
+  = form_for @payment do |f|
+    .box__title
+      %label 入金目的
+      %span.box__title--required 必須
+    = f.collection_select :purposepay_id, Purposepay.all, :id, :name,{prompt: "選択してください"}, {class: "box__input"}
+    %end
+    .box__margin
+    .box__title
+      %label 入金科目
+      %span.box__title--required 必須
+    = f.collection_select :type_id, Type.all, :id, :name,{prompt: "選択してください"}, {class: "box__input"}
+    .box__margin
+    .box__title
+      %label 来店予定店舗
+      %span.box__title--required 必須
+    = f.text_area :store_description, class: "box__input",  placeholder: "例）みかん支店"
+    .box__margin
+    .box__title 
+      %label 入金金額 
+      %span.box__title--required 必須
+    %br
+    ￥
+    = f.number_field :price, class: "box__input--input-price", placeholder: "０", min: 1, max: 9999999
+    .box__margin
+    .box__title
+      %label 営業担当者
+      %span.box__title--required 任意
+    = f.text_area :staff_name, class: "box__input",  placeholder: "例）山田太郎"
+    .box__margin
+    = f.submit "送信する", class: "box__btn-wrapper__submit-btn"
+.bottom
