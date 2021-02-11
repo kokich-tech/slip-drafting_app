@@ -131,3 +131,11 @@ belongs_to :user, optional: true
 
 ### Association
 - belongs_to :user, optional: true
+
+# 実装予定の内容
+・来店日時の予約フォーム
+・伝票予約情報の編集
+・マイページの作成
+・エラーメッセージの作成
+・来店時の持ち物表示機能を作る
+
