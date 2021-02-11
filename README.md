@@ -61,6 +61,69 @@ https://gyazo.com/f12dc8023f6d72eeb155aa6b4762d583
 ・利用者にわかりやすいようにボタンを大きく表示し、出金か入金か、ログイン画面はどこなのかをわかりやすく表示しました。</br>
 
  
+
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
+|nickname|string|null: false, unique: true, index:true|
+|email|string|null: false, unique: true, default: ""|
+|encrypted_password|string|null: false, default: ""|
+|familyname|string|null: false|
+|familyname_kana|string|null: false|
+|firstname|string|null: false|
+|firstname_kana|string|null: false|
+|birthday|date|null: false|
+|reset_password_token|string|
+|reset_password_sent_at|datetime|
+|remember_created_at|datetime|
+### Association
+- has_one :address
+- has_many  :withdrawal
+- has_many :payment
+
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|
+|prefecture_id|integer|
+|city|text|
+|house_number|text|
+|building|text|
+|telephone|integer|
+|user_id|integer|
+|deposit_id|integer|
+|account|integer|
+
+### Association
+belongs_to :user, optional: true
+
+## withdrawalテーブル
+|purpose_id|integer|null: false|
+|store_description|text|null: false|
+|price|integer|null: false|
+|price_10000|integer|
+|price_5000|integer|
+|price_1000|integer|
+|price_500|integer|
+|price_100|integer|
+|price_50|integer|
+|price_10|integer|
+|price_5|integer|
+|price_1|integer|
+|staff_name|text|
+|user|references|foreign_key: true|
+
+### Association
+- belongs_to :user, optional: true
+
+## paymentテーブル
+|purposepay_id|integer|null: false|
+|store_description|integer|null: false|
+|type_id|integer|null: false|
+|price|integer|null:false|
+|staff_name|text|
+|user|references|foreign_key: true|
+
+### Association
+- belongs_to :user, optional: true
