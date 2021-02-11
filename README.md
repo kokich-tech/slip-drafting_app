@@ -99,6 +99,8 @@ https://gyazo.com/f12dc8023f6d72eeb155aa6b4762d583
 belongs_to :user, optional: true
 
 ## withdrawalテーブル
+|Column|Type|Option|
+|------|----|------|
 |purpose_id|integer|null: false|
 |store_description|text|null: false|
 |price|integer|null: false|
@@ -118,6 +120,8 @@ belongs_to :user, optional: true
 - belongs_to :user, optional: true
 
 ## paymentテーブル
+|Column|Type|Option|
+|------|----|------|
 |purposepay_id|integer|null: false|
 |store_description|integer|null: false|
 |type_id|integer|null: false|
