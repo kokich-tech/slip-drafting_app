@@ -32,7 +32,7 @@ https://gyazo.com/b96afd5f444cf238b7e676cd1bdfb0b9
 
 新規登録画面
 https://gyazo.com/ab0d337b5d97eea14932dd7733cfb781
-</br>こちらでSDシステムで使う🆔と🔑の設定をしていただく。
+</br>こちらでSDシステムで使うIDとパスワードの設定をしていただく。
 
 ログイン後トップページ
 https://gyazo.com/b9d70a7631adb03795b3131b06d1e19f
