@@ -37,9 +37,9 @@ group :production do
   gem 'unicorn', '5.4.1'
 
 end
-gem 'sqlite3', group: :development
+# gem 'sqlite3', group: :development
 # 本番ではpostgressを使用する
-gem 'pg', group: :production
+# gem 'pg', group: :production
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -68,4 +68,9 @@ gem 'active_hash'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'sqlite3' 
+end
+
+group :production do
+  gem 'pg'
 end
