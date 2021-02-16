@@ -1,0 +1,15 @@
+current directory: /Users/koki.yabumoto/projects/slip-drafting_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext/bootsnap
+/Users/koki.yabumoto/.rbenv/versions/2.6.6/bin/ruby -I /Users/koki.yabumoto/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210216-3828-18vg7u4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/koki.yabumoto/projects/slip-drafting_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/koki.yabumoto/projects/slip-drafting_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/koki.yabumoto/projects/slip-drafting_app/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.5.1/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210216-3828-1xf54k8/bootsnap
