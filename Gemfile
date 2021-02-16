@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 group :production do
-
+  gem 'pg'
   gem 'unicorn', '5.4.1'
 
 end
@@ -71,6 +71,3 @@ group :development, :test do
   gem 'sqlite3' 
 end
 
-group :production do
-  gem 'pg'
-end
