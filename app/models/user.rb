@@ -17,9 +17,7 @@ class User < ApplicationRecord
 
 
   has_one :address
-
-  has_one :card, dependent: :destroy
   has_many  :withdrawal
   has_many :re_slip
-  has_many :buyers
+  has_many :payment
 end
