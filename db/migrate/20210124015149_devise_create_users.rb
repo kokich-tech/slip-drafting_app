@@ -39,7 +39,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.datetime :locked_at
 
 
-      t.timestamps null: false
+      t.timestamps 
     end
 
     def change
