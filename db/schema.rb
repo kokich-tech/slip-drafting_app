@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2021_02_07_111603) do
     t.text "house_number"
     t.text "building"
     t.integer "telephone"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 2021_02_07_111603) do
 
   create_table "re_slips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "withdrawal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "withdrawal_id"
     t.index ["user_id"], name: "index_re_slips_on_user_id"
     t.index ["withdrawal_id"], name: "index_re_slips_on_withdrawal_id"
   end
@@ -71,8 +71,6 @@ ActiveRecord::Schema.define(version: 2021_02_07_111603) do
     t.datetime "remember_created_at", precision: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "withdrawals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
