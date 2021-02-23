@@ -9,8 +9,9 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.text :house_number
       t.text :building
       t.integer :telephone
-      t.timestamps
+      
       t.integer :user_id
+      t.timestamps
     end
   end
   
