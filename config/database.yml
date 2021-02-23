@@ -55,4 +55,4 @@ production:
   database: heroku_15b7eb18a7eae8b
   username: b63ec24d0bc650
   password: c586201a
-  url: mysql://b63ec24d0bc650:c586201a@us-cdbr-east-03.cleardb.com/heroku_15b7eb18a7eae8b?reconnect=true
+  url: mysql2://b63ec24d0bc650:c586201a@us-cdbr-east-03.cleardb.com/heroku_15b7eb18a7eae8b?reconnect=true
