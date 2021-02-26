@@ -10,12 +10,12 @@
     = link_to image_tag('144438.png', size:"200x200"),  "#"
 
   .middle__sign-up
-    - if user_signed_in? && current_user.id
-      伝票記入 
-      = link_to image_tag('151069.png', size:"200x200"),  secondtop_index_path
-    - else 
-      ログイン画面へ
-      = link_to image_tag('118430.png', size:"200x200"),  "/users/sign_in"
+    -# - if user_signed_in? && current_user.id
+    -#   伝票記入 
+    -#   = link_to image_tag('151069.png', size:"200x200"),  secondtop_index_path
+    -# - else 
+    -#   ログイン画面へ
+    -#   = link_to image_tag('118430.png', size:"200x200"),  "/users/sign_in"
       
 .bottom
   .bottom__btn
