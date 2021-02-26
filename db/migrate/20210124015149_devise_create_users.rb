@@ -43,14 +43,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     end
 
     
-    create_table :addresses do |t|
-      t.integer :postal_code
-      t.integer :prefecture
-      t.text :city
-      t.text :house_number
-      t.text :building
-      t.timestamps
-    end
+    # create_table :addresses do |t|
+    #   t.integer :postal_code
+    #   t.integer :prefecture
+    #   t.text :city
+    #   t.text :house_number
+    #   t.text :building
+    #   t.timestamps
+    # end
     
 
     add_index :users, :email,                unique: true
